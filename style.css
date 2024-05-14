@@ -1,0 +1,79 @@
+.container {
+    display: grid;
+
+}
+.display {
+    display: flex;
+    width: 240px;
+    height: 80px;
+    outline: 1px solid;
+    background-color: #282828;
+    justify-content: right;
+    align-self: center;
+}
+.display p {
+    padding-right: 10px;
+    margin-top: 18px;
+    color: white;
+    font-size: x-large;
+}
+.calculate {
+    display: flex;
+}
+.numbers {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.numbers .number-row {
+    display: flex;
+    gap: 0px;
+}
+
+.numbers .additional-row {
+    display: flex;
+    gap: 0px;
+}
+
+.numbers .ac {
+    width: 180px;
+}
+
+.numbers button {
+    width: 60px;
+    height: 40px;
+    font-size: large;
+    border: 0;
+    border-radius: 0%;
+    background-color: #b0b0b6;
+    outline: 1px solid;
+}
+
+.numbers button:hover {
+    background-color: #808080;
+}
+
+.numbers .zero {
+    width: 120px;
+}
+
+.operations {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: right;
+    
+}
+.operations button {
+    width: 60px;
+    height: 40px;
+    font-size: large;
+    background-color: #FF9500;
+    border-radius: 0%;
+    color: white;
+    border: 0;
+    outline: 1px solid black;
+}
+
+.operations button:hover {
+    background-color: #F28C28;
+}
