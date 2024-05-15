@@ -45,12 +45,20 @@ let buttons = document.querySelectorAll(".num-button");
 buttons.forEach((button) => {
     button.addEventListener("click", function() {
         // console.log(this.innerText);
-        if (this.innerText === "+" ||
+        if ((this.innerText === "+" ||
             this.innerText === "-" ||
             this.innerText === "×" ||
-            this.innerText === "÷"
+            this.innerText === "÷") && result === undefined 
         ) {
             operator = this.innerText;
+        }
+        else if ((this.innerText === "+" ||
+                 this.innerText === "-" ||
+                 this.innerText === "×" ||
+                 this.innerText === "÷") && result !== undefined 
+        ) {
+            operator = this.innerText;
+            first_num = result;
         }
         else if (this.innerText === "AC") {
             first_num = "";
@@ -83,6 +91,10 @@ function displayPressed(pressedButton) {
     const newNum = document.createElement("p");
     const displayArea = document.querySelector(".display");
     
+    if (result !== undefined) {
+        displayArea.replaceChildren();
+    }
+
     if (pressedButton === "AC" ||
         pressedButton === "+" ||
         pressedButton === "-" ||
@@ -99,14 +111,6 @@ function displayPressed(pressedButton) {
     else {
         newNum.textContent = pressedButton;    
     }
-    
-    console.log(first_num);
-    console.log(operator);
-    console.log(second_num);
-    console.log(result);
-    
-    displayArea.appendChild(newNum);
-    // console.log(pressedButton);
-}
 
-// console.log(operate(4, 3, '/'));
+    displayArea.appendChild(newNum);
+}
